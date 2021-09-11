@@ -1,6 +1,7 @@
 package com.empresa.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,11 @@ public class MedicamentoServiceImpl implements MedicamentoService{
 	@Override
 	public Medicamento registrarMedicamento(Medicamento obj) {
 		return medicina.save(obj);
+	}
+
+	@Override
+	public Optional<Medicamento> buscarMedicamento(int idMedicamento) {
+		return medicina.findById(idMedicamento);
 	}
 
 }
