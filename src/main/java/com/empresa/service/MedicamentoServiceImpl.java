@@ -30,4 +30,24 @@ public class MedicamentoServiceImpl implements MedicamentoService{
 		return medicina.findById(idMedicamento);
 	}
 
+	@Override
+	public Optional<Medicamento> medicamentoId(int idMedicamento) {
+		return medicina.findById(idMedicamento);
+	}
+
+	@Override
+	public List<Medicamento> medicamentoNombre(String texto) {
+		return medicina.findByNombreLike(texto);
+	}
+
+	@Override
+	public List<Medicamento> medicamentoStock(int stock) {
+		return medicina.findByStock(stock);
+	}
+
+	@Override
+	public List<Medicamento> medicamentoStockMayorA(int stock) {
+		return medicina.findByStockGreaterThanEqual(stock);
+	}
+
 }
